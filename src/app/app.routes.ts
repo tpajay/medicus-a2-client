@@ -6,7 +6,8 @@ const routes: Routes = [
                         
   { path: 'patients', component: PatientListComponent, }, //patients
   { path: 'patient/:id', component: PatientDetailComponent },  //patient/id
-  { path: '', redirectTo: '/patients', pathMatch: 'full' }, //default
+  //{ path: '', redirectTo: '/patients', pathMatch: 'full' }, //default
+  { path: '', redirectTo: '/index.html', pathMatch: 'full' }, //default
   
 ];
 
