@@ -1,10 +1,111 @@
-<!-- under construction, but working -->
-<h1>Patient Details</h1>
-<section *ngIf="patient">
-	First Name: {{patient.nameFirst}} <br/>
-	Last Name: {{patient.nameLast}} <br/>
-	Street: {{patient.homeStreetAddr1}} <br/>
-	City: {{patient.homeCity}} <br/>
-	State: {{patient.homeState}} <br/>
-	Email: {{patient.email}} <br/>
-<section>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Patient Details</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://localhost:8080/Medicus/resources/css/bootstrap.css" />
+  <link rel="stylesheet" href="http://localhost:8080/Medicus/resources/css/medicus.css" />
+    
+</head>
+<body>
+ 
+	<nav class="navbar navbar-default navbar-inverse navbar-static-top navbg">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand adjustlogo" href="patientlist">
+					<img alt="Medicus" src="http://localhost:8080/Medicus/resources/images/logo_200px_bluewhite2.png" />" />
+				</a>
+			</div> <!-- end navbar header -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav navbar-left">
+      				<li><a href="patients">PATIENTS<span class="sr-only">(current)</span></a></li>
+        			<li><a href="patient">NEW PATIENT</a></li>
+        		</ul>
+        	</div> <!-- end collapse navbar -->
+		</div> <!-- end container -->
+	</nav>
+	
+	<!-- <div class="container-fluid"> -->
+	<div class="container-fluid">
+		<div class="panel panel-default" id="panelGeneral">
+			<div class="panel-heading" id="panelGeneralHeading">
+				<h3 class="panel-title">Patient Details (using Angular2/REST/JSON)</h3>
+			</div> <!-- end panelGeneralHeading-->
+			<div class="panel-body" id="panelGeneralBody">
+			
+			<!-- BEGIN: content -->
+			
+	<section *ngIf="patient">
+	
+			<table class="table table-bordered">
+				<!-- <tr>
+					<td>Patient ID:</td><td>{{patient.patientId}}</td>
+				</tr>
+				-->
+				<tr class="detailstr">
+					<td class="detailstd" ><strong>First Name:</strong></td><td>{{patient.nameFirst}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>Last Name:</strong></td><td>{{patient.nameLast}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>Street:</strong></td><td>{{patient.homeStreetAddr1}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>City:</strong></td><td>{{patient.homeCity}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>State:</strong></td><td>{{patient.homeState}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>Zipcode:</strong></td><td>{{patient.homeZipcode}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>Home Phone:</strong></td><td>{{patient.phoneHome}}</td>
+				</tr>	
+			</table>
+			
+			<!-- patient records listing here -->
+			<!-- need to add another service and component that contains the patients records list here -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<!-- <span class="precords"><spring:message code="records"/></span> -->
+					<h3 class="panel-title">Patient Records</h3>
+					<!-- <b><spring:message code="records"/></b> -->
+				</div> <!-- end panel-heading -->
+				
+				<table class="table table-hover">
+					<tr style="background-color: #ce9c7d; color: white; text-align: left;" height="30px">						
+						<!-- <td>Record ID</td> -->
+						<td>Physician</td>
+						<td>Form Name</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<!-- if records display in rows below -->
+					<tr *ngIf="record" style="background-color: white; color: black; text-align: left;" height="30px">
+						<td>{{record.physicianId}}</td>
+						<td>{{record.formDisplayName}}</td>
+						<!--
+						<td><a href="editrecord/{{record.formid}}">View</a></td>
+						<td><a href="deleterecord/{{record.formid}}">Delete</a></td>
+						-->
+					</tr>
+				</table>
+			</div>
+			
+	</section>
+			
+			<!-- END: content -->			
+			
+			</div> <!-- end panelGeneralBody -->
+		</div> <!-- end panelGeneral -->
+	</div> <!-- end container -->
+
+</body>
+</html>

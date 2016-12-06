@@ -1,9 +1,80 @@
-<section>
-	<section *ngIf="isLoading && !errorMessage">Loading Patient List...</section>
-	<ul>
-		<li *ngFor="let patient of patient">
-			<a href="#" [routerLink]="['/patient', patient.patientId]">{{patient.nameLast}}, {{patient.nameFirst}}</a>
-        </li>
-    </ul>
-    <section *ngIf="errorMessage">{{errorMessage}}</section>
-</section>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Patient List</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://localhost:8080/Medicus/resources/css/bootstrap.css" />
+  <link rel="stylesheet" href="http://localhost:8080/Medicus/resources/css/medicus.css" />
+    
+</head>
+<body>
+ 
+	<nav class="navbar navbar-default navbar-inverse navbar-static-top navbg">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand adjustlogo" href="patientlist">
+					<img alt="Medicus" src="http://localhost:8080/Medicus/resources/images/logo_200px_bluewhite2.png" />" />
+				</a>
+			</div> <!-- end navbar header -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav navbar-left">
+      				<li><a class="activenavlink" href="patients">PATIENTS<span class="sr-only">(current)</span></a></li>
+        			<li><a href="patient">NEW PATIENT</a></li>
+        		</ul>
+        	</div> <!-- end collapse navbar -->
+		</div> <!-- end container -->
+	</nav>
+
+
+	<div class="container-fluid">
+		<div class="panel panel-default" id="panelGeneral">
+			<div class="panel-heading" id="panelGeneralHeading">
+				<h3 class="panel-title">Patient List (using Angular2/REST/JSON)</h3>
+			</div> <!-- end panelGeneralHeading-->
+			<div class="panel-body" id="panelGeneralBody">
+			
+			<!-- BEGIN: content -->
+			
+			  <section *ngIf="isLoading && !errorMessage">Loading Patient List...</section>
+						
+			  <div class="container-fluid">
+			   <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+			    <tr style="background-color: #ce9c7d; color: white; text-align: center;" height="30px">
+			     <td>Last Name</td>
+			     <td>First Name</td>
+			     <td>Address</td>
+			     <td>Phone</td>
+			    </tr>
+			     <tr *ngFor="let patient of patient" style="background-color: white; color: black; text-align: center;" height="30px">	            
+				      <td>
+				      	<a href="#" [routerLink]="['/patient', patient.patientId]">{{patient.nameLast}}</a>
+				      </td>
+				      <td>
+				      	{{patient.nameFirst}}
+				      </td>
+				      <td>
+				      	{{patient.homeStreetAddr1}} <br/>
+				      	{{patient.homeCity}}, {{patient.homeState}}, {{patient.homeZipcode}}
+				      </td>
+				      <td>
+				      	{{patient.phoneHome}}
+				      </td>
+				  </tr>
+			   </table>
+			   </div>
+			   
+			   <section *ngIf="errorMessage">{{errorMessage}}</section>
+			
+			<!-- END: content -->
+					
+			</div> <!-- end panelGeneralBody -->
+		</div> <!-- end panelGeneral -->
+	</div> <!-- end container -->
+	  
+</body>
+</html>

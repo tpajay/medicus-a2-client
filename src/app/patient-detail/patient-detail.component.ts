@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Response } from '@angular/http';
 import { Patient } from "../patient";
+import { Record } from "../record";
 import { PatientServiceService } from "../patient-service.service";
 
 @Component({
@@ -13,7 +14,9 @@ import { PatientServiceService } from "../patient-service.service";
 //Responsible for retrieving a single Patient details from the DB, via service,
 //converting the JSON return string into a Patient object, and returning Patient object.
 export class PatientDetailComponent implements OnInit, OnDestroy {
+    
   patient: Patient;
+  record: Record[] = [];
   subscriber: any;
   professions: string[] = ['jedi', 'bounty hunter', 'princess', 'sith lord'];
 
