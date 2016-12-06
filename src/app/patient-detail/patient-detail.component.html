@@ -1,38 +1,10 @@
-<!-- new syntax for ng-if -->
+<!-- under construction, but working -->
+<h1>Patient Details</h1>
 <section *ngIf="patient">
-  <section>
-    <h2>You selected: {{patient.nameFirst}}</h2>
-    <h3>Description</h3>
-    <p>
-      {{patient.nameFirst}} {{patient.nameLast}}
-    </p>
-  </section>
-  <section>
-    <form (ngSubmit)="savePersonDetails()" #patientForm="ngForm">
-      <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name" required [(ngModel)]="patient.nameFirst" #name="ngModel">
-        <div [hidden]="name.valid || name.pristine" class="error">
-          Name is required my good sir/lady!
-        </div>
-      </div>
-      <div>
-        <label for="homeStreetAddr1">Address: </label>
-        <input type="string" name="homeStreetAddr1" [(ngModel)]="patient.homeStreetAddr1">
-      </div>
-      <div>
-        <label for="homeCity">City: </label>
-        <input type="string" name="homeCity" [(ngModel)]="patient.homeCity">
-      </div>
-      <div>
-        <label for="homeState">State:</label>
-        <select name="homeState" [(ngModel)]="patient.homeState">
-          <option *ngFor="let profession of professions" [value]="profession">{{profession}}</option>
-        </select>
-      </div>
-      <button type="submit" [disabled]="!patientForm.form.valid">Save</button>
-    </form>
-  </section>
-
-  <button (click)="loadPatientList()">Back to peoples list</button>
-  <section>
+	First Name: {{patient.nameFirst}} <br/>
+	Last Name: {{patient.nameLast}} <br/>
+	Street: {{patient.homeStreetAddr1}} <br/>
+	City: {{patient.homeCity}} <br/>
+	State: {{patient.homeState}} <br/>
+	Email: {{patient.email}} <br/>
+<section>

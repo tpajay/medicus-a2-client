@@ -50,7 +50,7 @@ export class PatientServiceService {
 } //end Class
 
 function errorHandler (error: any) {
-    let errorMsg = error.message || `Server Error.`
+    let errorMsg = error.message || `Server Error.  Make sure Medicus application is running.`
     console.error(errorMsg);
     return Observable.throw(errorMsg);
 }

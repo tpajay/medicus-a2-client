@@ -1,16 +1,9 @@
 <section>
-    <section *ngIf="isLoading && !errorMessage">
-    Loading our hyperdrives!!! Retrieving data...
-    </section>
-      <ul>
-        <!-- this is the new syntax for ng-repeat -->
-        <li *ngFor="let patient of patient">
-            <a href="#" [routerLink]="['/patient', patient.patientId]">
-          {{patient.nameFirst}}
-          </a>
+	<section *ngIf="isLoading && !errorMessage">Loading Patient List...</section>
+	<ul>
+		<li *ngFor="let patient of patient">
+			<a href="#" [routerLink]="['/patient', patient.patientId]">{{patient.nameLast}}, {{patient.nameFirst}}</a>
         </li>
-      </ul>
-      <section *ngIf="errorMessage">
-        {{errorMessage}}
-      </section>
-  </section>
+    </ul>
+    <section *ngIf="errorMessage">{{errorMessage}}</section>
+</section>

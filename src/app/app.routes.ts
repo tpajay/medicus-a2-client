@@ -4,16 +4,9 @@ import {PatientDetailComponent} from "./patient-detail/patient-detail.component"
 
 const routes: Routes = [
                         
-  // map '/patients' to the patient list component
-  { path: 'patients', component: PatientListComponent, },
-  
-  
-  // map '/patient/:id' to patient details component
-  { path: 'patient/:id', component: PatientDetailComponent },
-  
-  
-  // default route: map '/' to '/patients'
-  { path: '', redirectTo: '/patients', pathMatch: 'full' },
+  { path: 'patients', component: PatientListComponent, }, //patients
+  { path: 'patient/:id', component: PatientDetailComponent },  //patient/id
+  { path: '', redirectTo: '/patients', pathMatch: 'full' }, //default
   
 ];
 
