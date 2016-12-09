@@ -19,7 +19,11 @@ export class PatientDetailComponent implements OnInit, OnDestroy {
   patient: Patient;
   record: Record[] = [];
   subscriber: any;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 36a30fa9c96736101c6aeb99393af8b6ed2c2376
   constructor(private patientService: PatientServiceService,
               private route: ActivatedRoute,
               private router: Router){
