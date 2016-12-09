@@ -22,6 +22,7 @@ export class PatientServiceService {
       let patient$ = this.http
         .get(`${this.baseUrl}/patients`, {headers: this.getHeaders()})
         .map((res:Response) => res.json())
+        //.filter(patient => patient.age > 18) //can filter data using the data
         .catch(errorHandler);      
       return patient$;
     }

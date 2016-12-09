@@ -9,6 +9,7 @@ import { PatientServiceService } from "../patient-service.service";
   selector: 'patient-details', 
   providers: [PatientServiceService], 
   templateUrl: './patient-detail.component.html'
+  //templateUrl: './patient-detail-inline.component.html'
 })
 
 //Responsible for retrieving a single Patient details from the DB, via service,
@@ -18,12 +19,17 @@ export class PatientDetailComponent implements OnInit, OnDestroy {
   patient: Patient;
   record: Record[] = [];
   subscriber: any;
-  professions: string[] = ['jedi', 'bounty hunter', 'princess', 'sith lord'];
 
   constructor(private patientService: PatientServiceService,
               private route: ActivatedRoute,
               private router: Router){
   }
+  
+  /*
+  //@Input so can be set the patient from outside (from the patient list comp)
+  @Input() pat: Patient;
+  recipeId: number;
+  */  
 
   //subscribe method: myObservable.subscribe(myOnNext, myOnError, myOnComplete);
   //The Observable Contract: http://reactivex.io/documentation/contract.html

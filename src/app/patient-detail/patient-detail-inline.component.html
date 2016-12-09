@@ -1,0 +1,65 @@
+
+<!-- this is not being used at the moment, used to inline the details when a patient is selected
+	 from the list.
+ -->
+
+	<section *ngIf="patient">
+	
+			<table class="table table-bordered">
+				<!-- <tr>
+					<td>Patient ID:</td><td>{{patient.patientId}}</td>
+				</tr>
+				-->
+				<tr class="detailstr">
+					<td class="detailstd" ><strong>First Name:</strong></td><td>{{patient.nameFirst}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>Last Name:</strong></td><td>{{patient.nameLast}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>Street:</strong></td><td>{{patient.homeStreetAddr1}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>City:</strong></td><td>{{patient.homeCity}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>State:</strong></td><td>{{patient.homeState}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>Zipcode:</strong></td><td>{{patient.homeZipcode}}</td>
+				</tr>
+				<tr class="detailstr">
+					<td><strong>Home Phone:</strong></td><td>{{patient.phoneHome}}</td>
+				</tr>	
+			</table>
+			
+			<!-- patient records listing here -->
+			<!-- need to add another service and component that contains the patients records list here -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<!-- <span class="precords"><spring:message code="records"/></span> -->
+					<h3 class="panel-title">Patient Records</h3>
+					<!-- <b><spring:message code="records"/></b> -->
+				</div> <!-- end panel-heading -->
+				
+				<table class="table table-hover">
+					<tr style="background-color: #ce9c7d; color: white; text-align: left;" height="30px">						
+						<!-- <td>Record ID</td> -->
+						<td>Physician</td>
+						<td>Form Name</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<!-- if records display in rows below -->
+					<tr *ngIf="record" style="background-color: white; color: black; text-align: left;" height="30px">
+						<td>{{record.physicianId}}</td>
+						<td>{{record.formDisplayName}}</td>
+						<!--
+						<td><a href="editrecord/{{record.formid}}">View</a></td>
+						<td><a href="deleterecord/{{record.formid}}">Delete</a></td>
+						-->
+					</tr>
+				</table>
+			</div>
+			
+	</section>

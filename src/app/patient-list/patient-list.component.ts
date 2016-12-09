@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Patient } from "../patient";
 import { PatientServiceService } from "../patient-service.service";
 
@@ -31,5 +31,15 @@ export class PatientListComponent implements OnInit {
         error => this.errorMessage = error,
         () => this.isLoading = false);
   }
+  
+  //the click event uses the current patient as the
+  //method variable: onSelected(recipeFromRecipeListComp)
+  /*
+  @Output() patientSelectedEventEmitter = new EventEmitter<Patient>();
+  onSelected(patient: Patient) {
+    alert(patient.nameFirst);
+    this.patientSelectedEventEmitter.emit(patient);
+  }
+  */
   
 } //end Class
