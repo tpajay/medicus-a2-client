@@ -5,6 +5,12 @@ import { Patient } from "../patient";
 import { Record } from "../record";
 import { PatientServiceService } from "../patient-service.service";
 
+/*
+* @author  Jason Muse
+* LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+* GitHub: https://github.com/tpajay
+* Website: http://tpajay.com [coming soon with working applications]
+*/
 @Component({
   selector: 'patient-details', 
   providers: [PatientServiceService], 
@@ -19,11 +25,7 @@ export class PatientDetailComponent implements OnInit, OnDestroy {
   patient: Patient;
   record: Record[] = [];
   subscriber: any;
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 36a30fa9c96736101c6aeb99393af8b6ed2c2376
   constructor(private patientService: PatientServiceService,
               private route: ActivatedRoute,
               private router: Router){

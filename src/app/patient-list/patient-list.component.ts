@@ -2,6 +2,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Patient } from "../patient";
 import { PatientServiceService } from "../patient-service.service";
 
+/*
+* @author  Jason Muse
+* LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+* GitHub: https://github.com/tpajay
+* Website: http://tpajay.com [coming soon with working applications]
+*/
 @Component({
   selector: 'patient-list',
   providers: [PatientServiceService], 
@@ -33,7 +39,7 @@ export class PatientListComponent implements OnInit {
   }
   
   //the click event uses the current patient as the
-  //method variable: onSelected(recipeFromRecipeListComp)
+  //method variable: onSelected(....)
   /*
   @Output() patientSelectedEventEmitter = new EventEmitter<Patient>();
   onSelected(patient: Patient) {
