@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import { Patient } from "./patient";
 
 //Patient Service is responsible for retrieving Patients
-//a Spring framework REST URI's and Hibernate DB calls.
+//from Spring framework REST URI's and Hibernate DB calls (see Medicus Spring application).
 //The URI's return JSON data (Spring is using Jackson API for JSON)
 //and returning Patient object(s).
 
