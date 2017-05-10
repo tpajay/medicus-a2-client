@@ -1,6 +1,6 @@
 # MedicusA2Client
 
-Example of Angular frontend that receives JSON data from REST URI, transforms to and object, and presents in a JSP/JSTL Bootstrap view.
+Example of Angular frontend that receives JSON data from REST URI, transforms data to an object, and presents in a JSP/JSTL Bootstrap view.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
